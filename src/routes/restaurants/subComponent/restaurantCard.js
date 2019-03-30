@@ -1,5 +1,4 @@
 import React from "react";
-import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
@@ -7,10 +6,6 @@ import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import StarIcon from "@material-ui/icons/StarRate";
 import Avatar from "@material-ui/core/Avatar";
-import ImageIcon from "@material-ui/icons/Image";
-import BeachAccessIcon from "@material-ui/icons/BeachAccess";
-import Checkbox from "@material-ui/core/Checkbox";
-import deepOrange from "@material-ui/core/colors/deepOrange";
 import deepPurple from "@material-ui/core/colors/deepPurple";
 
 export default function RestaurantCard({
