@@ -6,7 +6,15 @@ import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import StarIcon from "@material-ui/icons/StarRate";
 import Avatar from "@material-ui/core/Avatar";
+import Typography from "@material-ui/core/Typography";
 import deepPurple from "@material-ui/core/colors/deepPurple";
+
+const wrapText = {
+  width: "50%",
+  whiteSpace: "nowrap",
+  overflow: "hidden",
+  textOverflow: "ellipsis"
+};
 
 export default function RestaurantCard({
   restaurant,
@@ -28,8 +36,10 @@ export default function RestaurantCard({
         {restaurant.name.charAt(0).toUpperCase()}
       </Avatar>
       <ListItemText
-        secondary={restaurant.favoriteFood}
-        primary={restaurant.name}
+        secondary={
+          <Typography style={wrapText}> {restaurant.favoriteFood} </Typography>
+        }
+        primary={<Typography style={wrapText}> {restaurant.name} </Typography>}
       />
       <ListItemSecondaryAction>
         {/*<Checkbox disabled  checked={selected} />*/}

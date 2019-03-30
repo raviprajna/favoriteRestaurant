@@ -1,5 +1,4 @@
-import { createAction, createReducer } from "redux-act";
-import * as globalActions from "../../common/reducer/sharedReducer.js";
+import { createAction } from "redux-act";
 import data from "./data.js";
 // ------------------------------------
 // Actions

@@ -24,6 +24,7 @@ export default function AddRestaurant({
             type="text"
             id="name"
             required="required"
+            maxlength="50"
             value={state.addModalContent.name}
             onChange={event =>
               parentProps.setAddModalKeyValue({
@@ -32,7 +33,7 @@ export default function AddRestaurant({
               })
             }
             pattern="([A-Za-z0-9 ]+)([A-Za-z0-9 ]+)"
-            title="Enter only Alpha numeric, Minimum 2 character required "
+            title="Enter only Alpha numeric, Minimum 2 character required and Max length is 50"
           />
         </Grid>
         <Grid item xs={12} sm={4}>
@@ -41,6 +42,7 @@ export default function AddRestaurant({
           <input
             type="text"
             id="fav"
+            maxlength="50"
             value={state.addModalContent.favoriteFood}
             onChange={event =>
               parentProps.setAddModalKeyValue({
@@ -49,7 +51,7 @@ export default function AddRestaurant({
               })
             }
             pattern="^[a-zA-Z0-9 ]+$"
-            title=" Enter only alpha numeric value. Space is allowed"
+            title=" Enter only alpha numeric value. Space is allowed and Max length is 50"
           />
         </Grid>
         <Grid item xs={12} sm={4}>
