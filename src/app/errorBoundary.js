@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CustomError from '../common/components/error';
+import CustomError from "../common/components/error";
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -14,7 +14,6 @@ class ErrorBoundary extends Component {
 
   componentDidCatch(error, info) {
     // https://stackoverflow.com/questions/52962851/whats-the-difference-between-getderivedstatefromerror-and-componentdidcatch
-
     // You can also log the error to an error reporting service
     // logErrorToMyService(error, info);
   }
@@ -23,7 +22,7 @@ class ErrorBoundary extends Component {
     if (this.state.hasError) {
       // You can render any custom fallback UI.
       // IN dev mode both fallback UI and error log is shown on UI.
-      return <CustomError/>;
+      return <CustomError />;
     }
 
     return this.props.children;

@@ -14,6 +14,15 @@ npm -version
 
 ```
 
+## App Snapshots
+
+```bash
+
+<p align="center"><img src="src/resource/img/AddRestaurant.JPG" alt="" width="900"></a></p>
+<br/>
+<p align="center"><img src="src/resource/img/RestaurantList.JPG" alt="" width="900"></a></p>
+
+```
 
 
 ## Get started
@@ -80,5 +89,6 @@ Starter kit was built with REBASS, but this project useses Material UI istead or
 - Add unit test
 - Remove inline styles
 - Add Pagination for list
+- Add pre-commit hook to prettify ( If you have yarn use : yarn prettier --write src/*)
 
 ```

@@ -6,7 +6,7 @@ const initialState = {};
 const enhancers = [];
 const middleware = [thunk];
 
-if (process.env.APPLICATION_PROFILE != 'prod') {
+if (process.env.APPLICATION_PROFILE != "prod") {
   const devToolsExtension = window.__REDUX_DEVTOOLS_EXTENSION__;
 
   if (typeof devToolsExtension === "function") {

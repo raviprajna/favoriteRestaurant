@@ -8,9 +8,9 @@ const target = document.querySelector("#root");
 
 render(
   <Provider store={store}>
-      <div>
-        <App />
-      </div>
+    <div>
+      <App />
+    </div>
   </Provider>,
   target
 );

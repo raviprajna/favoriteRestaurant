@@ -8,7 +8,7 @@ import restaurants from "./restaurants/restaurants-reducer.js";
 // Add home reducer key if required : ex ( home : home) ,
 
 const allReducers = {
-  restaurants : restaurants
+  restaurants: restaurants
 };
 
 export default allReducers;

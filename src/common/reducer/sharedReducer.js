@@ -11,7 +11,7 @@ export const showHideErrorModal = createAction("SHARED/SHOW_ERROR");
 // ------------------------------------
 const ACTION_HANDLERS = {
   [showHideLoadingComponent]: (state, payload) => {
-    if(payload) state.display.loadCount = state.display.loadCount + 1;
+    if (payload) state.display.loadCount = state.display.loadCount + 1;
     else state.display.loadCount = state.display.loadCount - 1;
     state.display.showLoader = state.display.loadCount == 0 ? false : true;
     return state;
@@ -40,7 +40,7 @@ export const initialState = {
   display: {
     showErrorModal: false,
     showLoader: false,
-    loadCount : 0,
+    loadCount: 0,
     error: { message: "", status: "", statusText: "", description: "" }
   }
 };
