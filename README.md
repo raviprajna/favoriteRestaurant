@@ -40,7 +40,7 @@ For best experience use chrome.
 
 1. Restaurant view will be empty 
 2. Click on + icon to add new Restaurant
-3. Add Restaurant for has 3 validations
+3. Add Restaurant has 3 validations
     a. Name cannot be Empty or Duplicate 
     b. Name and Favorite food cannot have special characters
     C. Rating can be only bettween 0 to 5, no decimal allowed.
@@ -57,7 +57,7 @@ For best experience use chrome.
 
 ```bash
 
-NOTE : At the momemt 
+NOTE : At the momemt there are failing test
 npm run test 
 npm test -- --coverage
 
@@ -79,5 +79,6 @@ Starter kit was built with REBASS, but this project useses Material UI istead or
 ```bash
 - Add unit test
 - Remove inline styles
+- Add Pagination for list
 
 ```
