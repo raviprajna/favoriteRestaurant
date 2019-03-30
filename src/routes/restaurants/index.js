@@ -85,7 +85,7 @@ componentDidMount(){
                                                                            margin="normal"
                                                                            value={state.filter.name}
                                                                            onChange={(event) =>
-                                                                           this.props.filterRestaurantByName(event.target.value) } />
+                                                                             this.props.filterRestaurantByName(event.target.value) } />
 
 
                     </ListItemText>

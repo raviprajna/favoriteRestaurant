@@ -34,9 +34,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "pre-commit": "pretty-quick --staged"
+    "eject": "react-scripts eject"
   },
+  "pre-commit": "pretty-quick --staged",
   "jest": {
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
