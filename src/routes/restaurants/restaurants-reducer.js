@@ -1,5 +1,7 @@
 import { createAction } from "redux-act";
 import data from "./data.js";
+import Geocode from "react-geocode";
+
 // ------------------------------------
 // Actions
 // ------------------------------------
@@ -24,9 +26,63 @@ export const init = () => {
       navigator.geolocation.getCurrentPosition(position =>
         dispatch(setGeoLocation(position))
       );
+
+      Geocode.setApiKey("AIzaSyBSK1cQZHNMfM9tA03sQNiLgVgtNHjnMsA");
     } else dispatch(setGeoLocation(null));
   };
 };
+
+export function getGeoCode(address) {
+  return dispatch => {
+    Geocode.fromAddress(address).then(
+      response => {
+        console.log(" response.results[0] " + response.results[0]);
+        dispatch(
+          setAddModalKeyValue({
+            key: "address",
+            value: response.results[0].formatted_address
+          })
+        );
+        dispatch(
+          setAddModalKeyValue({
+            key: "geoCode",
+            value: response.results[0].geometry.location
+          })
+        );
+      },
+      error => {
+        console.error(" Error While invoking Geogle API");
+        console.error(error);
+      }
+    );
+  };
+}
+
+export function getAddressFromGeoCode(geoCode) {
+  return dispatch => {
+    Geocode.fromLatLng(geoCode.lat, geoCode.lng).then(
+      response => {
+        console.log(" response.results[0] " + response.results[0]);
+        dispatch(
+          setAddModalKeyValue({
+            key: "address",
+            value: response.results[0].formatted_address
+          })
+        );
+        dispatch(
+          setAddModalKeyValue({
+            key: "geoCode",
+            value: response.results[0].geometry.location
+          })
+        );
+      },
+      error => {
+        console.error(" Error While invoking Geogle API");
+        console.error(error);
+      }
+    );
+  };
+}
 
 // ------------------------------------
 // Action Handlers
@@ -67,6 +123,7 @@ const ACTION_HANDLERS = {
       state.display.addError = "";
       state.addModalContent.name = "";
       state.addModalContent.favoriteFood = "";
+      state.addModalContent.address = "";
       state.addModalContent.stars = "";
     } else {
       state.display.showAddPanel = true;
@@ -139,7 +196,10 @@ export const initialState = {
     favoriteFood: "",
     stars: "",
     geoCode: null,
-    id: ""
+    id: "",
+    address: "",
+    partialAddress: "",
+    addressSuggested: []
   },
   selectedRestaurant: { id: 0, geoCode: null },
   display: {

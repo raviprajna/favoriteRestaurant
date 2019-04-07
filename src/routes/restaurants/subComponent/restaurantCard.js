@@ -7,7 +7,13 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import StarIcon from "@material-ui/icons/StarRate";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
+
 import deepPurple from "@material-ui/core/colors/deepPurple";
+import red from "@material-ui/core/colors/red";
+import pink from "@material-ui/core/colors/pink";
+import teal from "@material-ui/core/colors/teal";
+import indigo from "@material-ui/core/colors/indigo";
+import green from "@material-ui/core/colors/green";
 
 const wrapText = {
   width: "50%",
@@ -19,8 +25,14 @@ const wrapText = {
 export default function RestaurantCard({
   restaurant,
   selected,
-  deleteRestaurant
+  index,
+  parentProps
 }) {
+  const cardColor = [pink, teal, indigo, green, deepPurple, red];
+  // This is to select random color
+  const selectedColor = cardColor[Math.floor(Math.random() * cardColor.length)];
+
+  index = index % cardColor.length;
   let createStars = () => {
     let stars = [];
 
@@ -31,8 +43,13 @@ export default function RestaurantCard({
   };
 
   return (
-    <ListItem style={{ backgroundColor: selected ? deepPurple[100] : "white" }}>
-      <Avatar style={{ backgroundColor: deepPurple[700] }}>
+    <ListItem
+      style={{
+        backgroundColor: selected ? `${cardColor[index][100]}` : "white"
+      }}
+      onClick={() => parentProps.selectRestaurant(restaurant.id)}
+    >
+      <Avatar style={{ backgroundColor: `${cardColor[index][700]}` }}>
         {restaurant.name.charAt(0).toUpperCase()}
       </Avatar>
       <ListItemText
@@ -49,7 +66,7 @@ export default function RestaurantCard({
         </IconButton>
         <IconButton
           aria-label="Delete"
-          onClick={() => deleteRestaurant(restaurant.id)}
+          onClick={() => parentProps.deleteRestaurant(restaurant.id)}
         >
           <DeleteIcon color="secondary" style={{ marginLeft: "5px" }} />
         </IconButton>

@@ -56,6 +56,17 @@ For best experience use chrome.
 6. Click on the Map marker to highlight the rstaurant and also to center the map to the selected location.
 7. Search and delete  operation on list will also filter and remove from the map also        
 
+V2 Release 
+-----------------
+ 1. Removed expand collapse panel and replaced with a Modal. 
+    So to add restaurant click on "+" button
+ 2. Select Address feild is geo coded, so location can be selected by 
+    a. Entering exact location 
+    b. By pinning location on Map 
+ 3. In List view, selecting reatuarant will highlight marker in mapview with a gree circle.
+ 4. Code refactoting to re use mapView component.   
+ 5. Multiple color option for list avatars.
+ 
 ```
 
 

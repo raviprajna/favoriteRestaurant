@@ -6,12 +6,7 @@ import * as actions from "./restaurants-reducer.js";
 // Material UI Imports
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import ExpansionPanel from "@material-ui/core/ExpansionPanel";
-import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
-import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import List from "@material-ui/core/List";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import Typography from "@material-ui/core/Typography";
 
 // Sub component imports
 import RestaurantCard from "./subComponent/restaurantCard.js";
@@ -40,66 +35,50 @@ class Restaurants extends React.Component {
     return (
       <div style={{ margin: "2em" }}>
         <br />
-        <ExpansionPanel
-          expanded={state.display.showAddPanel}
-          onChange={() => this.props.toggleDisplayKey("showAddPanel")}
-        >
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography variant="h6">Add Restaurants</Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <AddRestaurant
-              parentProps={this.props}
-              currentPosition={currentPosition}
-              addError={state.display.addError}
-            />
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-        <br />
-        <ExpansionPanel defaultExpanded>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography variant="h6">Restaurant List</Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Grid container spacing={4}>
-              <Grid item xs={12} sm={12} md={6}>
-                <Paper
-                  style={{
-                    overflowY: "scroll",
-                    maxHeight: "80vh",
-                    minHeight: "80vh",
-                    minWidth: "100%"
-                  }}
-                >
-                  <ListView parentProps={this.props} />
-                  {filteredRestaurants.length == 0 ? (
-                    <div style={{ margin: "20px" }}>
-                      {" "}
-                      No Restaurants in the List.
-                    </div>
-                  ) : (
-                    <List>
-                      {filteredRestaurants.map(restaurant => (
-                        <RestaurantCard
-                          restaurant={restaurant}
-                          selected={
-                            restaurant.id == state.selectedRestaurant.id
-                          }
-                          deleteRestaurant={this.props.deleteRestaurant}
-                        />
-                      ))}
-                    </List>
-                  )}
-                </Paper>
-              </Grid>
-              <MapView
-                parentProps={this.props}
-                selectedRestaurantPosition={selectedRestaurantPosition}
-                filteredRestaurants={filteredRestaurants}
-              />
-            </Grid>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
+        <AddRestaurant
+          parentProps={this.props}
+          currentPosition={currentPosition}
+          addError={state.display.addError}
+          showAddPanel={state.display.showAddPanel}
+        />
+
+        <Grid container spacing={4}>
+          <Grid item xs={12} sm={12} md={6}>
+            <Paper
+              style={{
+                overflowY: "scroll",
+                maxHeight: "80vh",
+                minHeight: "80vh",
+                minWidth: "100%"
+              }}
+            >
+              <ListView parentProps={this.props} />
+              {filteredRestaurants.length == 0 ? (
+                <div style={{ margin: "20px" }}>
+                  {" "}
+                  No Restaurants in the List.
+                </div>
+              ) : (
+                <List>
+                  {filteredRestaurants.map((restaurant, index) => (
+                    <RestaurantCard
+                      restaurant={restaurant}
+                      selected={restaurant.id == state.selectedRestaurant.id}
+                      index={index}
+                      parentProps={this.props}
+                    />
+                  ))}
+                </List>
+              )}
+            </Paper>
+          </Grid>
+          <MapView
+            height={"80vh"}
+            parentProps={this.props}
+            selectedRestaurantPosition={selectedRestaurantPosition}
+            filteredRestaurants={filteredRestaurants}
+          />
+        </Grid>
       </div>
     );
   }
