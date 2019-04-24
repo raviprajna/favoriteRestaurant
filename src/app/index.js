@@ -15,7 +15,7 @@ class App extends Component {
         <AppBar position="fixed">
           <Toolbar>
             <Typography variant="h6" color="inherit">
-              Favorite Restaurants
+              FAVORITE RESTAURANTS
             </Typography>
           </Toolbar>
         </AppBar>
