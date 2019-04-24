@@ -1,5 +1,6 @@
 
 ## App Snapshots
+[DEMO](https://master.d193mnet9teo7w.amplifyapp.com/)
 
 <p align="center"><img src="src/resource/img/RestaurantList.JPG" alt="" width="900"></a></p>
 <br/>
