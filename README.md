@@ -2,7 +2,7 @@
 ## App Snapshots
 [DEMO](https://master.d193mnet9teo7w.amplifyapp.com/)
 
-<p align="center"><img src="src/resource/img/RestaurantList.JPG" alt="" width="900"></a></p>
+[<p align="center"><img src="src/resource/img/RestaurantList.JPG" alt="" width="900"></a></p>](https://master.d193mnet9teo7w.amplifyapp.com/)
 <br/>
 <p align="center"><img src="src/resource/img/AddRestaurant.JPG" alt="" width="900"></a></p>
 
