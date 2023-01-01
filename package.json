@@ -10,7 +10,7 @@
     "enzyme-to-json": "^3.3.5",
     "prettier": "^1.11.0",
     "pretty-quick": "^1.6.0",
-    "react-scripts": "^1.0.17"
+    "react-scripts": "^5.0.1"
   },
   "dependencies": {
     "@material-ui/core": "^3.9.3",
